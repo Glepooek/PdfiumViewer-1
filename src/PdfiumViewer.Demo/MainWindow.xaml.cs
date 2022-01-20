@@ -76,7 +76,7 @@ namespace PdfiumViewer.Demo
             get => Renderer.IsRightToLeft ? FlowDirection.RightToLeft : FlowDirection.LeftToRight;
             set => Renderer.IsRightToLeft = value == FlowDirection.RightToLeft ? true : false;
         }
-
+        private PdfDocument pdfDocument;
 
         private void OnMemoryChecker(object sender, EventArgs e)
         {
@@ -119,6 +119,8 @@ namespace PdfiumViewer.Demo
                 var bytes = File.ReadAllBytes(dialog.FileName);
                 var mem = new MemoryStream(bytes);
                 Renderer.OpenPdf(mem);
+
+                pdfDocument = PdfDocument.Load(mem);
             }
         }
         protected override void OnClosed(EventArgs e)
@@ -368,6 +370,38 @@ namespace PdfiumViewer.Demo
         {
             if (SelectedBookIndex != null)
                 Renderer.GotoPage(SelectedBookIndex.PageIndex);
+        }
+
+        private void OnPrint(object sender, RoutedEventArgs e)
+        {
+            if (pdfDocument == null)
+            {
+                return;
+            }
+
+            using var printDialog = new System.Windows.Forms.PrintDialog();
+            using var printDocument = pdfDocument.CreatePrintDocument();
+            printDialog.AllowSomePages = true;
+            printDialog.Document = printDocument;
+            printDialog.UseEXDialog = true;
+            printDialog.Document.PrinterSettings.FromPage = 1;
+            printDialog.Document.PrinterSettings.ToPage = pdfDocument.PageCount;
+            printDialog.Document.PrinterSettings.PrinterName = printDialog.PrinterSettings.PrinterName;
+
+            if (printDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                try
+                {
+                    if (printDialog.Document.PrinterSettings.FromPage <= pdfDocument.PageCount)
+                    {
+                        printDialog.Document.Print();
+                    }
+                }
+                catch
+                {
+                    // Ignore exceptions; the printer dialog should take care of this.
+                }
+            }
         }
     }
 }
