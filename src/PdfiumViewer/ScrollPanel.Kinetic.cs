@@ -25,7 +25,7 @@ namespace PdfiumViewer
         /// Friction Attached Dependency Property
         /// </summary>
         public static readonly DependencyProperty FrictionProperty =
-            DependencyProperty.RegisterAttached(nameof(Friction), typeof(double), typeof(ScrollPanel), 
+            DependencyProperty.RegisterAttached(nameof(Friction), typeof(double), typeof(ScrollPanel),
                 new FrameworkPropertyMetadata(DefaultFriction));
 
         public double Friction
@@ -42,7 +42,7 @@ namespace PdfiumViewer
         /// EnableKinetic Attached Dependency Property
         /// </summary>
         public static readonly DependencyProperty EnableKineticProperty =
-            DependencyProperty.RegisterAttached(nameof(EnableKinetic), typeof(bool), typeof(ScrollPanel), 
+            DependencyProperty.RegisterAttached(nameof(EnableKinetic), typeof(bool), typeof(ScrollPanel),
                 new FrameworkPropertyMetadata(false));
 
         public bool EnableKinetic

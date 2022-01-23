@@ -1,8 +1,8 @@
-﻿using System;
+﻿using PdfiumViewer.Core;
+using System;
 using System.Drawing;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using PdfiumViewer.Core;
 
 namespace PdfiumViewer.Helpers
 {

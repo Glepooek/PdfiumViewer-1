@@ -1,5 +1,5 @@
-﻿using System;
-using PdfiumViewer.Core;
+﻿using PdfiumViewer.Core;
+using System;
 
 namespace PdfiumViewer.Enums
 {

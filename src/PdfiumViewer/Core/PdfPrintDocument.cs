@@ -1,7 +1,7 @@
-﻿using System;
+﻿using PdfiumViewer.Enums;
+using System;
 using System.Drawing;
 using System.Drawing.Printing;
-using PdfiumViewer.Enums;
 
 namespace PdfiumViewer.Core
 {
@@ -210,8 +210,8 @@ namespace PdfiumViewer.Core
 
         private Orientation GetOrientation(SizeF pageSize)
         {
-            return pageSize.Height > pageSize.Width 
-                ? Orientation.Portrait 
+            return pageSize.Height > pageSize.Width
+                ? Orientation.Portrait
                 : Orientation.Landscape;
         }
 

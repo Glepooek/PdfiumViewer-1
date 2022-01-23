@@ -1,6 +1,6 @@
-﻿using System.Linq;
+﻿using Microsoft.Xaml.Behaviors;
+using System.Linq;
 using System.Windows;
-using Microsoft.Xaml.Behaviors;
 
 namespace PdfiumViewer.Demo.Converters
 {
@@ -27,7 +27,7 @@ namespace PdfiumViewer.Demo.Converters
 
         private static void OnIsEnabledForStyleChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            if (!(e.NewValue is bool))
+            if (e.NewValue is not bool)
                 return;
 
             var newValue = (bool)e.NewValue;

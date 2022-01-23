@@ -255,7 +255,7 @@ namespace PdfiumViewer
             base.OnPreviewMouseWheel(e);
 
             SetMouseWheelDelta(e.Delta);
-            
+
             if (IsDocumentLoaded)
             {
                 if (MouseWheelMode == MouseWheelMode.Zoom)

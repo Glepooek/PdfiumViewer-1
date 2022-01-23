@@ -1,8 +1,8 @@
-﻿using System;
+﻿using PdfiumViewer.Drawing;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Media;
-using PdfiumViewer.Drawing;
 using Color = System.Windows.Media.Color;
 using SystemColors = System.Windows.SystemColors;
 

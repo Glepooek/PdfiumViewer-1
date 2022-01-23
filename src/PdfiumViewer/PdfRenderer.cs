@@ -1,11 +1,11 @@
-﻿using System;
+﻿using PdfiumViewer.Core;
+using PdfiumViewer.Drawing;
+using PdfiumViewer.Enums;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Windows;
 using System.Windows.Media;
-using PdfiumViewer.Core;
-using PdfiumViewer.Drawing;
-using PdfiumViewer.Enums;
 using Size = System.Drawing.Size;
 
 namespace PdfiumViewer
@@ -122,7 +122,7 @@ namespace PdfiumViewer
         /// <param name="bounds">The PDF bounds to scroll into view.</param>
         public void ScrollIntoView(PdfRectangle bounds)
         {
-           ScrollIntoView(BoundsFromPdf(bounds));
+            ScrollIntoView(BoundsFromPdf(bounds));
         }
 
         /// <summary>
@@ -230,7 +230,7 @@ namespace PdfiumViewer
             }
         }
 
-        
+
 
         private void Markers_CollectionChanged(object sender, EventArgs e)
         {

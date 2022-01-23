@@ -1,13 +1,13 @@
-﻿using System;
+﻿using PdfiumViewer.Drawing;
+using PdfiumViewer.Enums;
+using PdfiumViewer.Helpers;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Text.RegularExpressions;
-using PdfiumViewer.Drawing;
-using PdfiumViewer.Enums;
-using PdfiumViewer.Helpers;
 
 namespace PdfiumViewer.Core
 {

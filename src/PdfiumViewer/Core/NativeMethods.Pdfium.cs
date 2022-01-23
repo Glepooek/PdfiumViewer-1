@@ -1,9 +1,9 @@
-﻿using System;
+﻿using PdfiumViewer.Enums;
+using PdfiumViewer.Helpers;
+using System;
 using System.IO;
 using System.Runtime.InteropServices;
 using System.Text;
-using PdfiumViewer.Enums;
-using PdfiumViewer.Helpers;
 
 namespace PdfiumViewer.Core
 {
